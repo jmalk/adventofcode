@@ -22,12 +22,12 @@ function whatFloorIsSantaOn(instructions) {
 
 console.log(whatFloorIsSantaOn(puzzleInstructions));
 
-function whenDoesSantaReach(instructions, floorNumber) {
+function whenDoesSantaReach(instructions, targetFloor) {
     'use strict';
 
     var instructionsArray = instructions.split('');
 
-    var numericalInstructions = instructionsArray.map(function(character) {
+    var numericalInstructions = instructionsArray.filter(isBracket).map(function(character) {
         if (character === '(') {
             return 1;
         } else if (character === ')') {
@@ -38,17 +38,24 @@ function whenDoesSantaReach(instructions, floorNumber) {
     });
 
     var currentFloor = 0;
+    var targetFloorReachedAt;
 
-    var instructionsGivenToReachBasement;
-
-    numericalInstructions.forEach(function checkIfSantaHasReachedBasement(element, index) {
-        currentFloor += element;
-        if (currentFloor === floorNumber) {
-            instructionsGivenToReachBasement = index + 1;
+    for (var i = 0; i < numericalInstructions.length; i++) {
+        currentFloor += numericalInstructions[i];
+        if (currentFloor === targetFloor) {
+            targetFloorReachedAt = i + 1;
+            break;
         }
-    });
+    }
 
-    return instructionsGivenToReachBasement;
+    return targetFloorReachedAt;
+
+}
+
+function isBracket(value) {
+    'use strict';
+
+    return (value === '(' || value === ')');
 }
 
 console.log(whenDoesSantaReach(puzzleInstructions, -1));
