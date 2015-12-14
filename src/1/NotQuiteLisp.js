@@ -20,3 +20,35 @@ function whatFloorIsSantaOn(instructions) {
     return sumOfInstructions;
 }
 
+console.log(whatFloorIsSantaOn(puzzleInstructions));
+
+function whenDoesSantaReach(instructions, floorNumber) {
+    'use strict';
+
+    var instructionsArray = instructions.split('');
+
+    var numericalInstructions = instructionsArray.map(function(character) {
+        if (character === '(') {
+            return 1;
+        } else if (character === ')') {
+            return -1;
+        } else {
+            return 0;
+        }
+    });
+
+    var currentFloor = 0;
+
+    var instructionsGivenToReachBasement;
+
+    numericalInstructions.forEach(function checkIfSantaHasReachedBasement(element, index) {
+        currentFloor += element;
+        if (currentFloor === floorNumber) {
+            instructionsGivenToReachBasement = index + 1;
+        }
+    });
+
+    return instructionsGivenToReachBasement;
+}
+
+console.log(whenDoesSantaReach(puzzleInstructions, -1));
