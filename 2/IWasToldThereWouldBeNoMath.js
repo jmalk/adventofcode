@@ -18,22 +18,19 @@ var matrixOfPresentDimensions = arrayOfPresentDimensions.map(function (string) {
 });
 
 // 2*l*w + 2*w*h + 2*h*l
-function surfaceAreaOfBox(arrayOfDimensions) {
-    var box = arrayOfDimensions;
+function surfaceAreaOfBox(box) {
     return 2 * ( box[0] * box[1] + box[1] * box[2] + box[2] * box[0] );
 }
 
 // PLUS shortest side * second shortest side
-function areaOfSmallestSide(arrayOfDimensions) {
-    var box = arrayOfDimensions;
+function areaOfSmallestSide(box) {
     var smallestSide = box.sort(function(a, b) { return a - b; })[0];
     var secondSmallestSide = box.sort(function(a, b) { return a - b; })[1];
     return smallestSide * secondSmallestSide;
 }
 
 // For each present:
-function squareFeetForPresent(arrayOfDimensions) {
-    var box = arrayOfDimensions;
+function squareFeetForPresent(box) {
     return surfaceAreaOfBox(box) + areaOfSmallestSide(box);
 }
 
