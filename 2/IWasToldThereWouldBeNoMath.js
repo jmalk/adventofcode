@@ -13,11 +13,9 @@ var presentDimensions = fs.readFileSync('presentDimensions', 'utf8', function(er
 var arrayOfPresentDimensions = presentDimensions.split('\n');
 
 // Divide each element into array of its three dimensions
-function splitOnx (string) {
+var matrixOfPresentDimensions = arrayOfPresentDimensions.map(function (string) {
     return string.split('x');
-}
-
-var matrixOfPresentDimensions = arrayOfPresentDimensions.map(splitOnx);
+});
 
 // 2*l*w + 2*w*h + 2*h*l
 function surfaceAreaOfBox(arrayOfDimensions) {
