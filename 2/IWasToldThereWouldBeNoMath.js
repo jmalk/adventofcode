@@ -37,4 +37,28 @@ function squareFeetForPresent(box) {
 var paperRequired = matrixOfPresentDimensions.map(squareFeetForPresent)
                                                  .reduce(function (a, b) { return a + b; });
 
-console.log(paperRequired);
+console.log('Paper required', paperRequired);
+
+/*** Part Two ***/
+
+// Perimeter of smallest face
+function perimeterOfSmallestFace(box) {
+    var smallestEdge = box.sort(function(a, b) { return a - b; })[0];
+    var secondSmallestEdge = box.sort(function(a, b) { return a - b; })[1];
+    return 2 * smallestEdge + 2 * secondSmallestEdge;
+}
+
+// Volume of present
+function volume(box) {
+    return box[0] * box[1] * box[2];
+}
+
+function feetOfRibbonForPresent(box) {
+    return perimeterOfSmallestFace(box) + volume(box);
+}
+
+// Ribbon required
+var ribbonRequired = matrixOfPresentDimensions.map(feetOfRibbonForPresent)
+                                              .reduce(function (a, b) { return a + b; });
+
+console.log('Ribbon required', ribbonRequired)
