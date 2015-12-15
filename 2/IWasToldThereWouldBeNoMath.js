@@ -18,7 +18,6 @@ function splitOnx (string) {
 }
 
 var matrixOfPresentDimensions = arrayOfPresentDimensions.map(splitOnx);
-console.log(matrixOfPresentDimensions);
 
 // 2*l*w + 2*w*h + 2*h*l
 function surfaceAreaOfBox(arrayOfDimensions) {
@@ -30,9 +29,7 @@ function surfaceAreaOfBox(arrayOfDimensions) {
 function areaOfSmallestSide(arrayOfDimensions) {
     var box = arrayOfDimensions;
     var smallestSide = box.sort(function(a, b) { return a - b; })[0];
-    console.log(smallestSide);
     var secondSmallestSide = box.sort(function(a, b) { return a - b; })[1];
-    console.log(secondSmallestSide);
     return smallestSide * secondSmallestSide;
 }
 
