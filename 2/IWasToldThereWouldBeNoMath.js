@@ -23,15 +23,15 @@ function surfaceAreaOfBox(box) {
 }
 
 // PLUS shortest side * second shortest side
-function areaOfSmallestSide(box) {
-    var smallestSide = box.sort(function(a, b) { return a - b; })[0];
-    var secondSmallestSide = box.sort(function(a, b) { return a - b; })[1];
-    return smallestSide * secondSmallestSide;
+function areaOfSmallestFace(box) {
+    var smallestEdge = box.sort(function(a, b) { return a - b; })[0];
+    var secondSmallestEdge = box.sort(function(a, b) { return a - b; })[1];
+    return smallestEdge * secondSmallestEdge;
 }
 
 // For each present:
 function squareFeetForPresent(box) {
-    return surfaceAreaOfBox(box) + areaOfSmallestSide(box);
+    return surfaceAreaOfBox(box) + areaOfSmallestFace(box);
 }
 
 var paperRequired = matrixOfPresentDimensions.map(squareFeetForPresent)
