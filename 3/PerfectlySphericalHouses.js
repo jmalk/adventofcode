@@ -27,6 +27,6 @@ currentPosition[0] = currentPosition[0] + cardinalDirections[testInstructions][0
 currentPosition[1] = currentPosition[1] + cardinalDirections[testInstructions][1];
 console.log(currentPosition);
 
-var uniqueHousesVisited = [];
+var housesVisited = [];
 
-console.log('At least one present was delivered to', uniqueHousesVisited.length, 'different houses.');
+console.log('At least one present was delivered to', housesVisited.length, 'different houses.');
