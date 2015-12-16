@@ -11,9 +11,11 @@ var instructions = fs.readFileSync('directions.txt', 'utf8', function(error, tex
 
 console.log(instructions);
 
+var arrayOfInstructions = instructions.split('');
+
 var currentPosition = [0, 0];
 
-var testInstructions = "^";
+var testInstructions = arrayOfInstructions[0];
 
 var cardinalDirections = {
     "^": [ 0,  1],
