@@ -61,4 +61,4 @@ function feetOfRibbonForPresent(box) {
 var ribbonRequired = matrixOfPresentDimensions.map(feetOfRibbonForPresent)
                                               .reduce(function (a, b) { return a + b; });
 
-console.log('Ribbon required', ribbonRequired)
+console.log('Ribbon required', ribbonRequired);
