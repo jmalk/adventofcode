@@ -23,3 +23,13 @@ Light.prototype.print = function() {
 var testLight = new Light(v, false);
 
 testLight.print();
+
+Light.prototype.turnOn = function() {
+    'use strict';
+    this.on = true;
+};
+
+testLight.turnOn();
+
+console.log('Expect test light to be on, it is actually');
+testLight.print();
