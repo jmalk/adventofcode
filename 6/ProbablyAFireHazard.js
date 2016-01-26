@@ -41,3 +41,15 @@ Light.prototype.turnOff = function() {
 testLight.turnOff();
 console.log('Expect test light to be off it is actually');
 testLight.print();
+
+Light.prototype.toggle = function() {
+    'use strict';
+    this.on = !this.on;
+};
+
+testLight.toggle();
+console.log('Test light is currently');
+testLight.print();
+console.log('After toggling it is');
+testLight.toggle();
+testLight.print();
