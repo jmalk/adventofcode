@@ -17,7 +17,7 @@ function Light(vector, isOn) {
 
 Light.prototype.print = function() {
     'use strict';
-    console.log('x: ' + this.position.x + ', y: ' + this.position.y + ', on: ' + this.isOn);
+    console.log('x: ' + this.position.x + ', y: ' + this.position.y + ', on: ' + this.on);
 };
 
 var testLight = new Light(v, false);
