@@ -30,7 +30,6 @@ Light.prototype.turnOn = function() {
 };
 
 testLight.turnOn();
-
 console.log('Expect test light to be on, it is actually');
 testLight.print();
 
