@@ -33,3 +33,12 @@ testLight.turnOn();
 
 console.log('Expect test light to be on, it is actually');
 testLight.print();
+
+Light.prototype.turnOff = function() {
+    'use strict';
+    this.on = false;
+};
+
+testLight.turnOff();
+console.log('Expect test light to be off it is actually');
+testLight.print();
